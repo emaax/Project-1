@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     String bundleMain = "bundleMain";
 
     private static final int MAIN_REQUEST_CODE = 27;
-    // data key to retrieve data from intent. Public so we can retrieve data in DetailActivity
+    // Create a String Data key so that we kan retrive data fron intent.
     public static final String DATA_KEY = "myDataKey";
     public static final String DATA_INDEX_KEY = "myDataIndexKey";
     public static final int ERROR_INDEX = -2;
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         ListViewMain = (ListView) findViewById(R.id.listViewMain);
 
 
-        //Creates and ArrayListThe size of the ArrayList instance increases and decreases as necessary based on the number of elements in the data structure
+        //Creates an arrayList
         myDataList = new ArrayList<>();
         myMasterDataList = new ArrayList<>();
 
