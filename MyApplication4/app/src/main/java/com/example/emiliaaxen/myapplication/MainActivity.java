@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
      ListViewMain.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
          @Override
 
-         //removes the item on the list using remove(position)
+
          public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
              myDataList.remove(position);
 
@@ -115,13 +115,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // make sure returned request code is what we are expecting
+
         if (requestCode == MAIN_REQUEST_CODE){
-            // make sure results were handled correctly
+
             if (resultCode == RESULT_OK){
-                // null pointer check
+
                 if (data != null) {
-                    // update data list with the new data
+
                     ArrayList<String> tempItemList = data.getStringArrayListExtra(DATA_KEY);
                     int index = data.getIntExtra(DATA_INDEX_KEY, ERROR_INDEX);
                     if (index != ERROR_INDEX){
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                         Log.e("Main", "Index is not valid: " + index);
                     }
 
-                    // now print our updated data
+
                     printData(myMasterDataList.get(index));
                 }
             } else  if (requestCode == RESULT_CANCELED){
@@ -147,24 +147,6 @@ public class MainActivity extends AppCompatActivity {
             Log.d("Main", item);
         }
 
-/*    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);*/
     }
 }
